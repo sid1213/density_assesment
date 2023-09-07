@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .navbar {
+    @apply xl:container mx-auto py-5 px-3;
+  }
+  .navbar-child {
+    @apply flex justify-between items-center text-lg font-medium;
+  }
+  .download-btn {
+    @apply bg-black rounded-full  py-4 px-7 text-white;
+  }
+}
