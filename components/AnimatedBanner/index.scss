@@ -1,0 +1,59 @@
+.animated-banner {
+  background-image: url("/yellow-dot-bg.png");
+  background-size: 22px auto;
+}
+.char-main {
+  z-index: 111;
+  .char-box {
+    width: fit-content;
+    background-image: url("/sunflower-bg.svg");
+    background-blend-mode: lighten;
+    background-size: cover;
+    z-index: 11;
+  }
+  .line {
+    bottom: 50%;
+    left: 0;
+    transform: translate(2.5%, 50%);
+    width: 95%;
+    border: 3px dashed rgb(213, 76, 60);
+    max-height: 100px;
+    z-index: -1;
+  }
+}
+.levels {
+  .level {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+
+    &::after {
+      position: absolute;
+      background: rgb(162, 162, 162);
+      width: 800%;
+      height: 0.1rem;
+      content: "";
+      top: 50%;
+      right: 0;
+      transform: translate(100%, -50%);
+    }
+    .level-heading {
+      position: absolute;
+      width: fit-content;
+    }
+    .odd {
+      top: -200%;
+      left: -100%;
+    }
+    .even {
+      bottom: -200%;
+      right: -150%;
+    }
+  }
+  .level:last-child {
+    &::after {
+      display: none !important;
+    }
+  }
+}
