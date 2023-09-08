@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: "Gill Sans", sans-serif;
+}
+
 @layer components {
   .navbar {
-    @apply xl:container mx-auto py-5 px-3;
+    @apply xl:container mx-auto py-4 px-3 max-h-[20vh];
   }
   .navbar-child {
     @apply flex justify-between items-center text-lg font-medium;
@@ -12,4 +16,95 @@
   .download-btn {
     @apply bg-black rounded-full  py-4 px-7 text-white;
   }
+  .hero-banner {
+    @apply overflow-hidden min-h-[75vh];
+  }
+}
+
+.floor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background-color: #c84c0c;
+  background-image: url("/groundblock.png");
+}
+.single-bush {
+  position: absolute;
+  bottom: 5%;
+  left: 30%;
+  width: 20%;
+  height: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/BushSingle.gif");
+  transform: translate(50%, -50%);
+}
+.double-bush {
+  position: absolute;
+  bottom: 5%;
+  right: 20%;
+  width: 20%;
+  height: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/BushDouble.gif");
+  transform: translate(50%, -50%);
+}
+.cloud-one {
+  position: absolute;
+  top: 10%;
+  right: 20%;
+  width: 20%;
+  height: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/CloudDouble.gif");
+  transform: translate(50%, -50%);
+}
+.cloud-two {
+  position: absolute;
+  transform: translate(50%, -50%);
+
+  top: 25%;
+  right: 40%;
+  width: 20%;
+  height: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/CloudTriple.gif");
+}
+.cloud-three {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 20%;
+  height: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/CloudSingle.gif");
+  transform: translate(50%, -50%);
+}
+.bricks {
+  position: absolute;
+  top: 45%;
+  right: 30%;
+  transform: translate(50%, -50%);
+  .brick {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("/Bricks.gif");
+  }
+  .question-brick {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("/QuestionBlock.gif");
+  }
+}
+.sky {
 }

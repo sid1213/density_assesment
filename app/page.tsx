@@ -1,9 +1,9 @@
-import Image from "next/image";
+import HeroBanner from "@/components/HeroBanner";
 
 export default function Home() {
   return (
-    <section className="2xl:container mx-auto bg-black ">
-      <h1 className="text-4xl font-semibold">Namsate dev</h1>
+    <section className="2xl:container mx-auto  px-5 ">
+      <HeroBanner />
     </section>
   );
 }
