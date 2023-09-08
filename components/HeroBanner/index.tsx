@@ -1,10 +1,11 @@
 import Image from "next/image";
+import "components/HeroBanner/index.scss";
 import { uuid } from "uuidv4";
 const HeroBanner = () => {
   return (
     <section className="bg-blue-400 rounded-3xl hero-banner px-10 py-16 relative">
       <div className="w-1/2  ">
-        <p>Ahead App</p>
+        <p className="text-white">Ahead App</p>
         <h1 className="text-6xl mt-5 font-bold text-white">
           Master your life <br />
           by mastering <br />
@@ -19,7 +20,7 @@ const HeroBanner = () => {
             alt="google app store"
           />
           <div>
-            <div className="flex space-x-3 ">
+            <div className="flex space-x-2 ">
               {Array(5)
                 .fill(null)
                 .map((star) => (
@@ -33,22 +34,22 @@ const HeroBanner = () => {
                   />
                 ))}
             </div>
-            <p className="text-sm">100+ AppStore reviews</p>
+            <p className="text-sm text-white mt-1">100+ AppStore reviews</p>
           </div>
         </div>
       </div>
-      <div className="floor"></div>
-      <div className="single-bush"></div>
-      <div className="double-bush"></div>
-      <div className="cloud-one"></div>
-      <div className="cloud-two"></div>
-      <div className="cloud-three"></div>
-      <div className="relative flex justify-center bricks">
-        <div className="brick"></div>
-        <div className="brick"></div>
-        <div className="question-brick"></div>
-        <div className="brick"></div>
-        <div className="brick"></div>
+      <div className="floor absolute"></div>
+      <div className="single-bush objectPlaced"></div>
+      <div className="double-bush objectPlaced"></div>
+      <div className="cloud-one objectPlaced"></div>
+      <div className="cloud-two objectPlaced"></div>
+      <div className="cloud-three objectPlaced"></div>
+      <div className="relative flex justify-center bricks objectPlaced">
+        <div className="brick bg-no-repeat bg-contain"></div>
+        <div className="brick bg-no-repeat bg-contain"></div>
+        <div className="question-brick bg-no-repeat bg-contain"></div>
+        <div className="brick bg-no-repeat bg-contain"></div>
+        <div className="brick bg-no-repeat bg-contain"></div>
       </div>
     </section>
   );
