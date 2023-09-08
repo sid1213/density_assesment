@@ -1,5 +1,9 @@
 @import url("/app/globals.scss");
 
+#top {
+  position: absolute;
+  left: -50%;
+}
 .floor {
   bottom: 0;
   left: 0;
@@ -14,7 +18,7 @@
   width: 20%;
   height: 10%;
   background-image: url("/BushSingle.gif");
-  transform: translate(50%, -50%);
+  transform: translate(0) scale(0);
 }
 .double-bush {
   bottom: 5%;
@@ -22,47 +26,53 @@
   width: 20%;
   height: 10%;
   background-image: url("/BushDouble.gif");
-  transform: translate(50%, -50%);
+  transform: translate(0) scale(0);
+}
+.hero-banner {
+  z-index: 111;
 }
 .cloud-one {
   top: 10%;
-  right: 20%;
+  right: -10%;
   width: 20%;
   height: 10%;
   background-image: url("/CloudDouble.gif");
   transform: translate(50%, -50%);
+  z-index: -1;
 }
 .cloud-two {
   transform: translate(50%, -50%);
-
   top: 25%;
-  right: 40%;
+  right: -10%;
   width: 20%;
   height: 10%;
   background-image: url("/CloudTriple.gif");
+  z-index: -1;
 }
 .cloud-three {
   top: 10%;
-  left: 20%;
+  left: -20%;
   width: 20%;
   height: 10%;
   background-image: url("/CloudSingle.gif");
   transform: translate(50%, -50%);
+  z-index: -1;
 }
 .bricks {
   top: 45%;
   right: 30%;
-  transform: translate(50%, -50%);
+  transform: translate(50%, -50%) scale(0);
   .brick {
     width: 50px;
     height: 50px;
     background-image: url("/Bricks.gif");
+    z-index: -1;
   }
   .question-brick {
     width: 50px;
     height: 50px;
-
     background-image: url("/QuestionBlock.gif");
+    z-index: -1;
   }
 }
 
