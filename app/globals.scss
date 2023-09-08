@@ -4,7 +4,6 @@
 
 * {
   font-family: "Gill Sans", sans-serif;
-  color: white;
 }
 
 @layer components {
@@ -32,7 +31,7 @@ h6 {
 }
 p {
   color: rgb(84, 84, 84);
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 section {
   @apply mt-10;
