@@ -1,0 +1,22 @@
+.dot:last-child {
+  border-left: none;
+}
+.dot {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: 0;
+    transform: translate(-60%, -50%);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: green;
+  }
+  &:last-child {
+    &::after {
+      transform: translate(-40%, -50%);
+    }
+  }
+}
