@@ -55,7 +55,7 @@ const StepSlider = () => {
         </h4>
         <h2 className="text-6xl font-semibold">Self-improvement. Ugh.</h2>
       </div>
-      <div className="steps mt-20">
+      <div className="steps mt-20 ">
         {marioData.map((data) => (
           <Step
             key={uuid()}
