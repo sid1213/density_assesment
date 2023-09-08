@@ -3,10 +3,10 @@ import "components/HeroBanner/index.scss";
 import { uuid } from "uuidv4";
 const HeroBanner = () => {
   return (
-    <section className="bg-blue-400 rounded-3xl hero-banner px-10 py-16 relative">
+    <section className="bg-blue-400 rounded-3xl hero-banner px-10 py-16 relative ">
       <div className="w-1/2  ">
-        <p className="text-white">Ahead App</p>
-        <h1 className="text-6xl mt-5 font-bold text-white">
+        <p className="text-white mario-text">Ahead App</p>
+        <h1 className="text-6xl mt-5 font-bold text-white mario-text">
           Master your life <br />
           by mastering <br />
           emotions
@@ -34,7 +34,9 @@ const HeroBanner = () => {
                   />
                 ))}
             </div>
-            <p className="text-sm text-white mt-1">100+ AppStore reviews</p>
+            <p className="text-sm text-white mt-1 mario-text">
+              100+ AppStore reviews
+            </p>
           </div>
         </div>
       </div>
