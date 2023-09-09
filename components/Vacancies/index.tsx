@@ -1,6 +1,7 @@
 import React from "react";
 import "components/Vacancies/index.scss";
 import Vcard from "./Vcard.js";
+import { uuid } from "uuidv4";
 
 const vData = [
   {
@@ -37,7 +38,7 @@ function Vacancies() {
       </h2>
       <div className="container flex justify-between lg:space-x-10 lg:space-y-0 space-y-10 lg:flex-row flex-col">
         {vData.map((item) => (
-          <Vcard title={item.title} content={item.content} />
+          <Vcard title={item.title} content={item.content} key={uuid()} />
         ))}
       </div>
     </section>

@@ -12,9 +12,9 @@ const GetStarted = () => {
         </h3>
 
         <p className="text-lg">
-          "Welcome to the world of Mario! Remember, it's not just about
-          designing levels; it's about crafting adventures, surprises, and fun.
-          Dive in with creativity and enthusiasm! 🍄🌟"
+          &quot;Welcome to the world of Mario! Remember, it&apos;s not just
+          about designing levels; it&apos;s about crafting adventures,
+          surprises, and fun. Dive in with creativity and enthusiasm! 🍄🌟&quot;
         </p>
 
         <p className="text-sm font-semibold my-3">
