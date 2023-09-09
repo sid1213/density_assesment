@@ -4,11 +4,12 @@
 
 * {
   font-family: "Gill Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 
 @layer components {
   .navbar {
-    @apply xl:container mx-auto py-4 px-3 max-h-[20vh];
+    @apply w-screen mx-auto py-4 px-3 max-h-[20vh] fixed top-0 z-[1111111] bg-white left-1/2 translate-x-[-50%];
   }
   .navbar-child {
     @apply flex justify-between items-center text-lg font-medium;
@@ -34,5 +35,25 @@ p {
   font-size: 1rem;
 }
 section {
-  @apply mt-10;
+  @apply my-32;
+}
+
+$mobile: 568px;
+$tablet: 998px;
+$desktop: 1244px;
+
+@mixin mobile {
+  @media screen and (max-width: #{$mobile}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: #{$tablet}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (max-width: #{$desktop}) {
+    @content;
+  }
 }

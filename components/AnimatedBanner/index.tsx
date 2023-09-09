@@ -43,7 +43,7 @@ const levels = [
 
 const AnimatedBanner = () => {
   return (
-    <section>
+    <section className="section">
       <div className="text-center p-10 bg-red-100 animated-banner rounded-2xl">
         <div className="p-10 space-y-2">
           <h4 className="text-xl font-semibold">

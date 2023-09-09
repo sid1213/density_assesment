@@ -1,7 +1,11 @@
+"use client";
 import "components/Cards";
 import "components/Cards/index.scss";
 import Card from "./Card/index";
 import { uuid } from "uuidv4";
+import { useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // this data i have generated from ChatGPT3
 const data = [
@@ -64,16 +68,37 @@ const data = [
 ];
 
 const Cards = () => {
+  const section_2 = useRef(null);
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(section_2.current, {
+      scrollTrigger: {
+        trigger: section_2.current,
+        start: "100px bottom",
+        end: "300px bottom",
+        markers: true,
+        scrub: true,
+      },
+      left: "0%",
+    });
+  }, []);
   return (
     <section>
       <div>
         <div className="p-10">
-          <h1 className="text-6xl font-semibold">
+          <h1
+            className="text-6xl font-semibold relative  text-first"
+            ref={section_2}
+          >
             Does this Sounds Familiar.....
           </h1>
         </div>
-        <div className="overflow-auto">
-          <div className=" flex overflow-auto w-fit space-x-10">
+        <div className="overflow-hidden">
+          <div
+            className=" flex overflow-auto w-fit space-x-10 relative"
+            ref={section_2}
+          >
             {data.map((data) => (
               <Card
                 key={uuid()}

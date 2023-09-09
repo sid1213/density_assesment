@@ -4,7 +4,7 @@ import React from "react";
 const Navbar = () => {
   return (
     <nav className="navbar  ">
-      <div className="navbar-child">
+      <div className=" container  mx-auto navbar-child">
         <div>
           <Image src="/logo.png" width={75} height={75} alt="logo" />
         </div>

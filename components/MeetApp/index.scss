@@ -1,0 +1,31 @@
+@use "../../app/globals.scss" as scss;
+.coin1,
+.coin2 {
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 10%;
+  background: url("/coin.png") 0 0 no-repeat;
+  background-size: contain;
+  background-position: right;
+  transform: rotate(11deg);
+}
+.coin1 {
+  top: 0px;
+  left: 100px;
+  width: 90%;
+  height: 10%;
+  background: url("/coin.png") 0 0 no-repeat;
+  background-size: contain;
+  background-position: right;
+  transform: rotate(2deg);
+  @include scss.tablet {
+    display: none;
+  }
+}
+
+.coin2 {
+  @include scss.tablet {
+    background-size: 9%;
+  }
+}

@@ -87,7 +87,7 @@ const HeroBanner = () => {
       <div className="cloud-one objectPlaced"></div>
       <div className="cloud-two objectPlaced"></div>
       <div className="cloud-three objectPlaced"></div>
-      <div className="relative flex justify-center bricks objectPlaced">
+      <div className=" flex justify-center bricks ">
         <div className="brick bg-no-repeat bg-contain "></div>
         <div className="brick bg-no-repeat bg-contain"></div>
         <div className="question-brick bg-no-repeat bg-contain"></div>
