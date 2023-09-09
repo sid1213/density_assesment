@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Read Me file
 
-## Getting Started
+# Mario
 
-First, run the development server:
+##### Destiny Frontend Assignment
 
-```bash
+## Overview
+
+In Mario, we utilized Next.js, Tailwind CSS, and GSAP to construct a web application. Our primary focus during development was on achieving a seamless combination of UI design and functionality.
+
+## Used Technologies
+
+- **[NextJS](https://nextjs.org/)** - is a popular React framework that enables server-side rendering, providing a fast and efficient web application.
+- **[Tailwind CSS](https://tailwindcss.com/)** - is a utility-first CSS framework that simplifies styling and makes it easy to create responsive and visually appealing user interfaces.
+- **[GSAP (GreenSock Animation Platform)](https://greensock.com/gsap/)** - is a powerful animation library that adds fluid animations and interactivity to enhance the overall user experience.
+- **[Node JS](https://nodejs.org/)** - Evented I/O for the backend.
+
+And of course _Mario_ itself is open source with a [public repository](link) on GitHub.
+
+## Installation
+
+Mario requires **[Node.js](https://nodejs.org/)** to run server.
+
+Install the dependencies and devDependencies and start the server.
+
+sh
+cd folder_name
+npm i
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For production environments.
+use _Vercel_ . It is a cloud platform that empowers developers to deploy, scale, and manage their web applications effortlessly, offering a seamless experience for hosting and managing projects.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Why Mario Theme?
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+We chose the Mario theme for this project because of its timeless appeal and widespread recognition. Mario is an iconic character in the gaming world, loved by people of all ages. By using Mario as the theme, we aim to evoke a sense of nostalgia and joy while showcasing the capabilities of modern web technologies. Plus, who wouldn't want to play as Mario in a web application?
 
-## Learn More
+### Data Generation
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Data for this project is generated using Chat GPT, a sophisticated language model that assists in creating content, dialogues, and other game-related elements, ensuring an engaging and immersive experience for players.

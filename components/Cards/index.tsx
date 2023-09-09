@@ -70,27 +70,11 @@ const data = [
 const Cards = () => {
   const section_2 = useRef(null);
 
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to(section_2.current, {
-      scrollTrigger: {
-        trigger: section_2.current,
-        start: "100px bottom",
-        end: "300px bottom",
-        markers: true,
-        scrub: true,
-      },
-      left: "0%",
-    });
-  }, []);
   return (
     <section>
       <div>
         <div className="p-10">
-          <h1
-            className="text-6xl font-semibold relative  text-first"
-            ref={section_2}
-          >
+          <h1 className="text-6xl font-semibold relative  text-first">
             Does this Sounds Familiar.....
           </h1>
         </div>

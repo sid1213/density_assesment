@@ -1,27 +1,8 @@
 "use client";
-import React, { useLayoutEffect, useRef } from "react";
-import { gsap, CSSPlugin } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const TextBanner = () => {
-  const section = useRef(null);
-
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const animation = gsap.timeline({
-      scrollTrigger: {
-        trigger: section.current,
-        start: 100,
-        end: 300,
-        scrub: true,
-        markers: true,
-      },
-    });
-    animation.from(section.current, { left: "0%", duration: 2 });
-  }, []);
   return (
-    <section className="section relative " id="section-2" ref={section}>
+    <section className="section relative " id="section-2">
       <div className="flex  flex-nowrap">
         <div className="w-1/3 p-5 flex  ">
           <h3 className="text-2xl font-semibold w-fit mx-auto">EQ beats IQ</h3>

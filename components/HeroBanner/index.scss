@@ -76,6 +76,21 @@
     z-index: -1;
   }
 }
+.mario-main {
+  position: absolute;
+  background-size: contain;
+  bottom: 10%;
+  left: 50%;
+  width: 71px;
+  height: 72px;
+  background: url("/mario-main.png") left center;
+  animation: 0.8s steps(4) infinite;
+}
+@keyframes play {
+  100% {
+    background-position: -284px;
+  }
+}
 
 .objectPlaced {
   @apply absolute bg-no-repeat bg-contain;
