@@ -2,8 +2,8 @@
 import "components/Cards";
 import "components/Cards/index.scss";
 import Card from "./Card/index";
-// import { uuid } from "uuidv4";
-import { useEffect, useRef } from "react";
+import { uuid } from "uuidv4";
+import { useLayoutEffect, useRef } from "react";
 import { gsap, CSSPlugin } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -73,7 +73,7 @@ const data = [
 const Cards = () => {
   const cardSliderRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const cardSlider = cardSliderRef.current;
     gsap.to(cardSlider, {
       right: "40%",
@@ -101,7 +101,7 @@ const Cards = () => {
           >
             {data.map((data, index) => (
               <Card
-                key={index}
+                key={uuid()}
                 bg_clr={data.bg_clr}
                 src={data.src}
                 heading={data.heading}

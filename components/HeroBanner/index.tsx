@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import "components/HeroBanner/index.scss";
 import { uuid } from "uuidv4";
@@ -54,7 +54,7 @@ const HeroBanner = () => {
     });
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     start();
     const mario = marioRef.current;
     const cloud = cloudRef.current;
