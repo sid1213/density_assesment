@@ -3,7 +3,7 @@ import "components/Cards";
 import "components/Cards/index.scss";
 import Card from "./Card/index";
 // import { uuid } from "uuidv4";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap, CSSPlugin } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -75,7 +75,7 @@ const Cards = () => {
 
   const cardSliderRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const heading = headingRef.current;
     const cardSlider = cardSliderRef.current;
     gsap.to(heading, {
