@@ -2,8 +2,11 @@ import React from "react";
 
 const GetStarted = () => {
   return (
-    <section className="rounded-3xl min-h-[50vh] py-20">
-      <div className="md:w-3/6 mx-auto flex justify-center items-center flex-col text-center">
+    <section className="rounded-3xl min-h-fit py-10">
+      <div
+        className="md:w-3/6 mx-auto flex justify-center items-center flex-col text-center"
+        data-aos="fade-up"
+      >
         <p className="privacy text-sm font-semibold">
           We take privacy seriously
         </p>
@@ -12,9 +15,9 @@ const GetStarted = () => {
         </h3>
 
         <p className="text-lg">
-          &quot;Welcome to the world of Mario! Remember, it&apos;s not just
-          about designing levels; it&apos;s about crafting adventures,
-          surprises, and fun. Dive in with creativity and enthusiasm! 🍄🌟&quot;
+          "Welcome to the world of Mario! Remember, it's not just about
+          designing levels; it's about crafting adventures, surprises, and fun.
+          Dive in with creativity and enthusiasm! 🍄🌟"
         </p>
 
         <p className="text-sm font-semibold my-3">

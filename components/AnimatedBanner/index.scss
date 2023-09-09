@@ -1,3 +1,4 @@
+@use "../../app/globals.scss" as scss;
 .animated-banner {
   background-image: url("/yellow-dot-bg.png");
   background-size: 22px auto;
@@ -10,15 +11,21 @@
     background-blend-mode: lighten;
     background-size: cover;
     z-index: 11;
+    @include scss.tablet {
+      background-size: contain;
+      width: 65%;
+    }
   }
   .line {
+    border: 3px dashed rgb(213, 76, 60);
+    z-index: -1;
     bottom: 50%;
     left: 0;
-    transform: translate(2.5%, 50%);
-    width: 95%;
-    border: 3px dashed rgb(213, 76, 60);
-    max-height: 100px;
-    z-index: -1;
+    transform: (2.5%, 50%);
+    @include scss.mobile {
+      transform: translate(-50%, 50%);
+      left: 40px;
+    }
   }
 }
 .levels {
@@ -27,16 +34,27 @@
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-
     &::after {
       position: absolute;
       background: rgb(162, 162, 162);
-      width: 800%;
+      width: 950%;
       height: 0.1rem;
       content: "";
       top: 50%;
       right: 0;
       transform: translate(100%, -50%);
+
+      @include scss.desktop {
+        width: 600%;
+      }
+      @include scss.tablet {
+        width: 460%;
+      }
+      @include scss.mobile {
+        width: 2px;
+        height: 12vh;
+        transform: translate(-14px, 15px);
+      }
     }
     .level-heading {
       position: absolute;
@@ -45,10 +63,21 @@
     .odd {
       top: -200%;
       left: -100%;
+
+      @include scss.mobile {
+        top: 0px;
+        left: 51px;
+        font-size: 14px;
+      }
     }
     .even {
       bottom: -200%;
       right: -150%;
+      @include scss.mobile {
+        bottom: 0px;
+        right: 51px;
+        font-size: 14px;
+      }
     }
   }
   .level:last-child {

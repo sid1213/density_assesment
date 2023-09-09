@@ -1,5 +1,8 @@
+"use client";
+import React, { useState, useEffect } from "react";
 import { uuid } from "uuidv4";
 import Step from "./Step";
+import "./index.scss";
 
 const marioData = [
   {
@@ -49,13 +52,13 @@ const marioData = [
 const StepSlider = () => {
   return (
     <section>
-      <div className="p-10 space-y-2">
-        <h4 className="text-xl font-semibold">
+      <div className="md:p-10 p-2 space-y-2">
+        <h4 className="font-semibold" data-aos="fade-right">
           Wrong with self-improvement & how we&apos;re fixing it.
         </h4>
-        <h2 className="text-6xl font-semibold">Self-improvement. Ugh.</h2>
+        <h2 data-aos="fade-right">Self-improvement. Ugh.</h2>
       </div>
-      <div className="steps mt-20 ">
+      <div className="steps mt-20 pt-8" id="steps">
         {marioData.map((data) => (
           <Step
             key={uuid()}

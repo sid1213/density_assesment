@@ -1,21 +1,52 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(true);
   return (
-    <nav className="navbar  ">
-      <div className=" container  mx-auto navbar-child">
-        <div>
-          <Image src="/logo.png" width={75} height={75} alt="logo" />
+    <nav className="navbar">
+      <div className="lg:container lg:mx-auto navbar-child">
+        <div className="lg:px-0 px-5 lg:block flex justify-between items-center">
+          <Image src="/logo.png" width={65} height={65} alt="logo" />
+          <div
+            className="lg:px-0 px-5 text-2xl lg:hidden inline-block text-black"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <Image
+              src={isOpen ? "/close.png" : "/menu.png"}
+              width={20}
+              height={20}
+              alt="hamburger"
+            />
+          </div>
         </div>
-        <ul className="flex space-x-10">
-          <li className="text-black">Emotions</li>
-          <li className="text-black">Manifesto</li>
-          <li className="text-black">Self-awareness test</li>
-          <li className="text-black">Work with us</li>
-        </ul>
-        <div>
-          <button className="download-btn"> Download App</button>
+        <div
+          className={`navbar-child lg:space-x-3 lg:mt-0 lg:bg-transparent bg-white transition-all ${
+            isOpen ? "h-auto mt-5" : "h-0"
+          }`}
+        >
+          <ul
+            className={`flex lg:space-x-10 lg:space-y-0 space-y-10 text-base lg:flex-row flex-col lg:p-0 p-5 ${
+              isOpen ? "flex" : "hidden"
+            }`}
+          >
+            <li className="text-black block cursor-pointer lg:inline-block">
+              Emotions
+            </li>
+            <li className="text-black block cursor-pointer lg:inline-block">
+              Manifesto
+            </li>
+            <li className="text-black block cursor-pointer lg:inline-block">
+              Self-awareness test
+            </li>
+            <li className="text-black block lg:inline-block">Work with us</li>
+          </ul>
+          <div
+            className={`lg:py-0 py-5 text-sm ${isOpen ? "block" : "hidden"}`}
+          >
+            <button className="download-btn lg:mt-0 mt-4"> Download App</button>
+          </div>
         </div>
       </div>
     </nav>

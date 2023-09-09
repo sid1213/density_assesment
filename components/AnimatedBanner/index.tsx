@@ -44,17 +44,15 @@ const levels = [
 const AnimatedBanner = () => {
   return (
     <section className="section">
-      <div className="text-center p-10 bg-red-100 animated-banner rounded-2xl">
-        <div className="p-10 space-y-2">
-          <h4 className="text-xl font-semibold">
+      <div className="text-center p-10 md:px-0 px-2 bg-red-100 animated-banner rounded-2xl">
+        <div className="md:p-10 space-y-2" data-aos="fade-down">
+          <p className="font-semibold">
             Let your friends, family, and co-workers (anonymously) rate your
             social skills.
-          </h4>
-          <h2 className="text-6xl font-semibold">
-            Ever wondered what others think of you?
-          </h2>
+          </p>
+          <h2>Ever wondered what others think of you?</h2>
         </div>
-        <div className="my-10 w-[80%] mx-auto relative flex justify-between char-main  ">
+        <div className="my-10 lg:w-[80%] w-[98%] mx-auto relative md:h-auto h-[50vh] flex justify-between char-main  md:flex-row flex-col">
           {characters.map((char) => (
             <CharBox
               img={char.img}
@@ -63,11 +61,11 @@ const AnimatedBanner = () => {
               key={uuid()}
             />
           ))}
-          <div className="line absolute"></div>
+          <div className="line absolute lg:w-[95%] md:w-[90%] w-0 md:h-auto h-[45vh] md:max-h-[100px] max-h-full"></div>
         </div>
 
-        <div className="levels bg-white  min-h-[250px] flex justify-center items-center w-[70%] mx-auto my-20 rounded-2xl">
-          <div className="flex justify-between w-full px-10">
+        <div className="levels bg-white  min-h-[250px] flex justify-center items-center md:w-[75%] mx-auto my-20 rounded-2xl">
+          <div className="flex justify-between w-full md:px-10 md:flex-row flex-col md:h-auto h-[49vh] p-3 lg:items-start items-center">
             {levels.map((level, index) => {
               return (
                 <div
@@ -75,14 +73,15 @@ const AnimatedBanner = () => {
                   key={uuid()}
                   style={{ background: level.color }}
                 >
-                  <h3
+                  <h4
+                    data-aos="zoom-in"
                     className={`level-heading ${
                       index % 2 == 0 ? "odd" : "even"
-                    } p-3 rounded-2xl whitespace-nowrap text-xl font-medium`}
+                    } p-3 rounded-2xl whitespace-nowrap font-medium`}
                     style={{ background: level.color }}
                   >
                     {level.level_name}
-                  </h3>
+                  </h4>
                 </div>
               );
             })}

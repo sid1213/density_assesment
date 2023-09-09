@@ -1,7 +1,9 @@
-.text-first {
-  position: relative;
-  left: -50%;
-}
 .card-slider {
   right: 10%;
+}
+
+.cards {
+  &::-webkit-scrollbar {
+    appearance: none;
+  }
 }

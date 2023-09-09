@@ -11,7 +11,7 @@ const Footer = () => {
         <h3 className="text-xl font-semibold mt-2 mb-4">Mario</h3>
 
         {/* details */}
-        <div className="location flex md:space-x-8 justify-between items-center md:flex-row flex-col md:space-y-0 space-y-3">
+        <div className="location flex lg:space-x-8 justify-between items-center lg:flex-row flex-col lg:space-y-0 space-y-3">
           <p className="text-[12px] font-semibold flex">
             <span className="py-1 px-1 bg-blue-200 rounded-full mr-2">
               <Image

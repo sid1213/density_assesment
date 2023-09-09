@@ -3,7 +3,7 @@ import "components/Cards";
 import "components/Cards/index.scss";
 import Card from "./Card/index";
 // import { uuid } from "uuidv4";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap, CSSPlugin } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -71,25 +71,10 @@ const data = [
 ];
 
 const Cards = () => {
-  const headingRef = useRef(null);
-
   const cardSliderRef = useRef(null);
 
-  useLayoutEffect(() => {
-    const heading = headingRef.current;
+  useEffect(() => {
     const cardSlider = cardSliderRef.current;
-    gsap.to(heading, {
-      left: "0",
-      duration: 1,
-      scrollTrigger: {
-        trigger: heading,
-        start: "top 100%",
-        end: "bottom",
-        toggleActions: "restart pause none reverse",
-        scrub: true,
-        markers: true,
-      },
-    });
     gsap.to(cardSlider, {
       right: "40%",
       duration: 3,
@@ -99,7 +84,6 @@ const Cards = () => {
         end: "bottom",
         toggleActions: "restart pause none reverse",
         scrub: true,
-        markers: true,
       },
     });
   }, []);
@@ -107,14 +91,12 @@ const Cards = () => {
   return (
     <section className="section">
       <div>
-        <div className="p-10 text-first" ref={headingRef}>
-          <h1 className="text-6xl font-semibold ">
-            Does this Sounds Familiar.....
-          </h1>
+        <div className="p-10 text-first">
+          <h2 data-aos="fade-right">Does this Sounds Familiar.....</h2>
         </div>
-        <div className="mt-5">
+        <div className="mt-5 overflow-auto cards">
           <div
-            className=" flex  w-fit space-x-10 relative card-slider"
+            className=" flex overflow-auto w-fit space-x-10 relative card-slider pt-8"
             ref={cardSliderRef}
           >
             {data.map((data, index) => (

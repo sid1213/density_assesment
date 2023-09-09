@@ -6,41 +6,35 @@
   font-family: "Gill Sans", sans-serif;
   scroll-behavior: smooth;
 }
-
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 @layer components {
   .navbar {
-    @apply w-screen mx-auto py-4 px-3 max-h-[20vh] fixed top-0 z-[1111111] bg-white left-1/2 translate-x-[-50%];
+    @apply w-screen mx-auto py-4 md:px-3 max-h-[20vh] fixed top-0 z-[1111111] bg-white left-1/2 translate-x-[-50%];
   }
   .navbar-child {
-    @apply flex justify-between items-center text-lg font-medium;
+    @apply flex lg:justify-between lg:items-center text-lg font-medium lg:flex-row flex-col;
   }
   .download-btn {
-    @apply bg-black rounded-full  py-4 px-7 text-white;
+    @apply bg-black rounded-full  py-4 px-7 text-white md:ml-0 ml-3;
   }
   .hero-banner {
     @apply overflow-hidden min-h-[75vh];
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: black;
-}
-p {
-  color: rgb(84, 84, 84);
-  font-size: 1rem;
-}
 section {
-  @apply my-32;
+  @apply md:my-32 my-20;
 }
 
-$mobile: 568px;
+// View Points
+$mobile: 698px;
 $tablet: 998px;
-$desktop: 1244px;
+$desktop: 1024px;
 
 @mixin mobile {
   @media screen and (max-width: #{$mobile}) {
@@ -56,4 +50,32 @@ $desktop: 1244px;
   @media screen and (max-width: #{$desktop}) {
     @content;
   }
+}
+// typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+}
+p {
+  color: rgb(84, 84, 84);
+  font-size: 1rem;
+}
+
+h1 {
+  @apply lg:text-6xl text-4xl font-bold;
+}
+h2 {
+  @apply lg:text-4xl text-3xl font-semibold;
+}
+
+h3 {
+  @apply md:text-2xl text-xl font-semibold;
+}
+
+h4 {
+  @apply md:text-xl text-[1.1rem];
 }

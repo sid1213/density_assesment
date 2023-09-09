@@ -1,5 +1,5 @@
 "use client";
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import "components/HeroBanner/index.scss";
 import { uuid } from "uuidv4";
@@ -54,7 +54,7 @@ const HeroBanner = () => {
     });
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     start();
     const mario = marioRef.current;
     const cloud = cloudRef.current;
@@ -153,7 +153,7 @@ const HeroBanner = () => {
     <section className="bg-blue-400 rounded-3xl hero-banner px-10 py-16 relative ">
       <div className="w-1/2 " id="top">
         <p className="text-white mario-text ">Ahead App</p>
-        <h1 className="text-6xl mt-5 font-bold text-white mario-text">
+        <h1 className="mt-5 text-white mario-text">
           Master your life <br />
           by mastering <br />
           emotions

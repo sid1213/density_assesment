@@ -28,7 +28,7 @@ function Vcard({ title, content }: vCardProps) {
       onMouseLeave={handleMouseLeave}
     >
       <div className="vHead my-3">
-        <h3 className="md:text-2xl text-xl font-semibold">{title}</h3>
+        <h4 className="font-semibold">{title}</h4>
       </div>
       <div className="vBody pl-4">
         <ul className=" list-disc ">
@@ -41,7 +41,10 @@ function Vcard({ title, content }: vCardProps) {
       </div>
 
       <div className={`vFooter${isHovered ? "visible" : ""}`}>
-        <button className=" bg-black text-white rounded-full mt-4 px-6 py-3 text-sm">
+        <button
+          className=" bg-black text-white rounded-full mt-4 px-6 py-3 text-sm"
+          data-aos="fade-up"
+        >
           See Details
         </button>
       </div>

@@ -32,7 +32,7 @@ const Card: React.FC<PropType> = ({
         objectFit="contain"
         alt="card-icon"
       />
-      <h5 className="text-2xl font-semibold">{heading}</h5>
+      <h4 className="font-semibold">{heading}</h4>
       <p>{description}</p>
     </div>
   );

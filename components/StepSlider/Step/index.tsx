@@ -6,12 +6,13 @@ interface PropType {
 }
 const Step: React.FC<PropType> = ({ heading, paragraph }) => {
   return (
-    <div className="space-y-3 px-10 pb-20 w-[70%] mx-auto border-l-4 border-purple-800 dot">
+    <div
+      data-aos="fade-up"
+      className={`space-y-3 pl-10 pb-20 md:w-[70%] w-[90%] mx-auto border-l-4 border-blue-300 dot transition-opacity duration-300`}
+    >
       <div className="">
-        <h4 className="font-semibold text-2xl translate-y-[-50%] ">
-          {heading}
-        </h4>
-        <p className="text-xl">{paragraph}</p>
+        <h4 className="font-semibold translate-y-[-50%] ">{heading}</h4>
+        <p className="">{paragraph}</p>
       </div>
     </div>
   );
