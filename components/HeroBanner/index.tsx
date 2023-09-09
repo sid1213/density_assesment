@@ -6,8 +6,6 @@ import { uuid } from "uuidv4";
 
 import { gsap, CSSPlugin } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Step from "../StepSlider/Step";
-import { transform } from "typescript";
 
 gsap.registerPlugin(CSSPlugin); //initialization
 gsap.registerPlugin(ScrollTrigger); //initialization
