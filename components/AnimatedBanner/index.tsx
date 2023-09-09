@@ -52,7 +52,7 @@ const AnimatedBanner = () => {
           </p>
           <h2>Ever wondered what others think of you?</h2>
         </div>
-        <div className="my-10 lg:w-[80%] w-[98%] mx-auto relative md:h-auto h-[50vh] flex justify-between char-main  md:flex-row flex-col">
+        <div className="my-10 lg:w-[80%] items-center md:items-start w-[98%] mx-auto relative md:h-auto h-[50vh] flex justify-between char-main  md:flex-row flex-col">
           {characters.map((char) => (
             <CharBox
               img={char.img}
@@ -64,7 +64,7 @@ const AnimatedBanner = () => {
           <div className="line absolute lg:w-[95%] md:w-[90%] w-0 md:h-auto h-[45vh] md:max-h-[100px] max-h-full"></div>
         </div>
 
-        <div className="levels bg-white  min-h-[250px] flex justify-center items-center md:w-[75%] mx-auto my-20 rounded-2xl">
+        <div className="levels bg-white left-[45%] min-h-[250px] flex justify-center items-center md:w-[75%] mx-auto my-20 rounded-2xl">
           <div className="flex justify-between w-full md:px-10 md:flex-row flex-col md:h-auto h-[49vh] p-3 lg:items-start items-center">
             {levels.map((level, index) => {
               return (
