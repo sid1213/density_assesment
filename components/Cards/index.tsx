@@ -107,7 +107,7 @@ const Cards = () => {
     <section className="section">
       <div ref={cardSliderContainerRef}>
         <div className="p-10 text-first flex items-center space-x-20">
-          <h2 data-aos="fade-right">Does this Sounds Familiar.....</h2>
+          <h2 data-aos="fade-right">Mario Adventures Await.....</h2>
           <div data-aos="fade-left">
             <Image
               src="/pngegg.png"

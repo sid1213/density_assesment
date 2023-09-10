@@ -54,9 +54,9 @@ const StepSlider = () => {
     <section>
       <div className="md:p-10 p-2 space-y-2">
         <h4 className="font-semibold" data-aos="fade-right">
-          Wrong with self-improvement & how we&apos;re fixing it.
+          Master the Mario Games in 8 Easy Steps
         </h4>
-        <h2 data-aos="fade-right">Self-improvement. Ugh.</h2>
+        <h2 data-aos="fade-right">Step&apos;s Of Mario.</h2>
       </div>
       <div className="steps mt-20 pt-8" id="steps">
         {marioData.map((data) => (

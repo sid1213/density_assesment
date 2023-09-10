@@ -32,13 +32,13 @@ const Navbar = () => {
             }`}
           >
             <li className="text-black block cursor-pointer lg:inline-block">
-              Emotions
+              Mario
             </li>
             <li className="text-black block cursor-pointer lg:inline-block">
-              Manifesto
+              Games
             </li>
             <li className="text-black block cursor-pointer lg:inline-block">
-              Self-awareness test
+              About Mario
             </li>
             <li className="text-black block lg:inline-block">Work with us</li>
           </ul>

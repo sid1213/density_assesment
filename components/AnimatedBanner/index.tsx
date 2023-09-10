@@ -47,10 +47,9 @@ const AnimatedBanner = () => {
       <div className="text-center p-10 md:px-0 px-2 bg-red-100 animated-banner rounded-2xl">
         <div className="md:p-10 space-y-2" data-aos="fade-down">
           <p className="font-semibold">
-            Let your friends, family, and co-workers (anonymously) rate your
-            social skills.
+            Discover the Iconic Elements of Mario&apos;s Adventures
           </p>
-          <h2>Ever wondered what others think of you?</h2>
+          <h2>Enter the World of Mushrooms and Levels?</h2>
         </div>
         <div className="my-10 lg:w-[80%] items-center md:items-start w-[98%] mx-auto relative md:h-auto h-[50vh] flex justify-between char-main  md:flex-row flex-col">
           {characters.map((char) => (

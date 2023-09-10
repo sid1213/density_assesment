@@ -157,10 +157,10 @@ const HeroBanner = () => {
       ref={marioContainerRef}
     >
       <div className="w-1/2 h-fit" id="top">
-        <p className="text-white mario-text ">Ahead App</p>
+        <p className="text-white mario-text ">Mario App</p>
         <h1 className="mt-5 text-white mario-text">
           Master your life <br />
-          by mastering <br />
+          with Mario <br />
           emotions
         </h1>
         <div className="flex space-x-10 items-center mt-20">

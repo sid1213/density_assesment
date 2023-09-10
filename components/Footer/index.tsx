@@ -9,6 +9,7 @@ const Footer = () => {
 
         {/* app name */}
         <h3 className="text-xl font-semibold mt-2 mb-4">Mario</h3>
+        <p className="text-sm mb-4">Bringing Mario Magic to Your Screen</p>
 
         {/* details */}
         <div className="location flex lg:space-x-8 justify-between items-center lg:flex-row flex-col lg:space-y-0 space-y-3">
@@ -22,7 +23,7 @@ const Footer = () => {
                 alt="google app store"
               />
             </span>
-            AuguststraBe 26, 10117 Berlin
+            123 Mushroom Street, Toad Town
           </p>
           <p className="text-[12px] font-semibold flex">
             <span className="py-1 px-[5px] bg-blue-200 rounded-full mr-2">
@@ -34,7 +35,7 @@ const Footer = () => {
                 alt="google app store"
               />
             </span>
-            hi@mario-app.com
+            contact@marioapp.com
           </p>
         </div>
 
@@ -49,7 +50,7 @@ const Footer = () => {
         />
 
         {/* copyright */}
-        <p className="text-[12px]">@ 2022 Ahead app. All right reserved</p>
+        <p className="text-[12px]">@ 2023 mario app. All right reserved</p>
       </div>
     </footer>
   );

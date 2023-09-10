@@ -9,15 +9,13 @@ const GetStarted = () => {
         className="md:w-3/6 mx-auto flex justify-center items-center flex-col text-center"
         data-aos="fade-up"
       >
-        <p className="privacy  font-semibold">We take privacy seriously</p>
-        <h3 className="text-2xl font-bold my-3">
-          Before you get started Mario
-        </h3>
+        <p className="privacy  font-semibold">Ready to Jump into the Action?</p>
+        <h3 className="text-2xl font-bold my-3">Get Started Today</h3>
 
         <p className=" ">
-          &quot;Welcome to the world of Mario! Remember, it&apos;s not just
-          about designing levels; it&apos;s about crafting adventures,
-          surprises, and fun. Dive in with creativity and enthusiasm! 🍄🌟&quot;
+          &quot;Join millions of gamers worldwide and experience the nostalgia,
+          excitement, and challenges of the Mario universe. Download the Mario
+          App now and start your adventure! 🍄🌟&quot;
         </p>
 
         <p className=" font-semibold my-3">

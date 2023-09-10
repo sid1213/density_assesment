@@ -15,16 +15,23 @@ const MeetApp = () => {
         </div>
         <div className="main_content lg:w-1/2 mt-4" data-aos="fade-left">
           <p>
-            Mario app offers a fun and engaging way to stay connected with
-            friends and family through interactive games and challenges. Its
-            user-friendly interface and wide variety of mini-games make it
-            perfect for bonding and entertainment.
+            Mario App brings the magic of Mario to your device, allowing you to
+            play anytime anywhere, Whether you&apos;re on your morning commute
+            or relaxing at home, the adventure never stops. Our intuitive
+            interface ensures that players of all ages and skill levels can jump
+            right into the action with ease.
             <br />
             <br />
-            Whether you&apos;re looking to kill time or foster closer
-            relationships, Mario app provides an enjoyable platform to do so.Its
-            user-friendly interface and wide variety of mini-games make it
-            perfect for bonding and entertainment.
+            Your gaming experience is our top priority. Mario App provides a
+            safe and secure platform for you to enjoy the Mario universe without
+            worry.Play with friends on different devices seamlessly. Connect
+            with friends, challenge them, and see who can conquer the Mushroom
+            Kingdom faster. With a vast library of Mario games at your
+            fingertips, you can explore classics like Super Mario Bros. Mario
+            Kart, and modern hits like Super Mario Odyssey, all in one place.
+            Join a global community of Mario enthusiasts. Share your
+            achievements, compete in challenges, and connect with fellow players
+            who share your passion.
           </p>
         </div>
       </div>
