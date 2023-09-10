@@ -1,0 +1,6 @@
+.bg-trans {
+  transition: background-color 0.5s ease;
+  &:hover {
+    background: #f9f3d4;
+  }
+}

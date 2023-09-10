@@ -2,6 +2,7 @@
 import { useState } from "react";
 import React from "react";
 import { uuid } from "uuidv4";
+import "./index.scss";
 
 interface vCardProps {
   title: String;
@@ -22,7 +23,7 @@ function Vcard({ title, content }: vCardProps) {
     <div
       className={`card${
         isHovered ? "hovered" : ""
-      } bg-[#fefbec] hover:bg-[#f9f3d4] flex-grow p-8 rounded-2xl cursor-pointer transition-all`}
+      } bg-[#fefbec] bg-trans  flex-grow p-8 rounded-2xl cursor-pointer transition-all relative`}
       key={uuid()}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -40,9 +41,13 @@ function Vcard({ title, content }: vCardProps) {
         </ul>
       </div>
 
-      <div className={`vFooter${isHovered ? "visible" : ""}`}>
+      <div
+        className={`vFooter${
+          isHovered ? "visible" : ""
+        } absolute bottom-0 translate-y-[20%]`}
+      >
         <button
-          className=" bg-black text-white rounded-full mt-4 px-6 py-3 text-sm"
+          className=" bg-black text-white rounded-full mt-4 px-6 py-3 text-sm "
           data-aos="fade-up"
         >
           See Details
