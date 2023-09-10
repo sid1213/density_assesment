@@ -6,6 +6,7 @@ import { uuid } from "uuidv4";
 import { useLayoutEffect, useRef } from "react";
 import { gsap, CSSPlugin } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger); //initialization
 gsap.registerPlugin(CSSPlugin); //initialization
@@ -87,12 +88,22 @@ const Cards = () => {
       },
     });
   }, []);
+  // applied card animation with gsap here
 
   return (
     <section className="section">
       <div>
-        <div className="p-10 text-first">
+        <div className="p-10 text-first flex items-center space-x-20">
           <h2 data-aos="fade-right">Does this Sounds Familiar.....</h2>
+          <div data-aos="fade-left">
+            <Image
+              src="/pngegg.png"
+              width={100}
+              height={100}
+              objectFit="contain"
+              alt="pngegg"
+            />
+          </div>
         </div>
         <div className="mt-5 overflow-auto cards">
           <div
