@@ -13,6 +13,11 @@ import "aos/dist/aos.css";
 
 export default function Home() {
   useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
+
     AOS.init({
       duration: 800,
       once: false,
