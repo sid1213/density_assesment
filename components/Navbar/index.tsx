@@ -8,7 +8,7 @@ const Navbar = () => {
     if (window.innerWidth >= 1024) {
       setIsOpen(true);
     }
-  });
+  }, []);
   return (
     <nav className="navbar">
       <div className="lg:container lg:mx-auto navbar-child">
