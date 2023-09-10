@@ -1,5 +1,5 @@
 "use client";
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import "components/HeroBanner/index.scss";
 import { uuid } from "uuidv4";
@@ -12,14 +12,20 @@ gsap.registerPlugin(ScrollTrigger); //initialization
 
 const HeroBanner = () => {
   const [disabled, setDisabled] = useState<boolean>(false);
-  const [hide, setHide] = useState<boolean>(true);
 
-  let audio = new Audio("/coin.mp3");
+  const audio = useRef<HTMLAudioElement | undefined>(
+    typeof Audio !== "undefined" ? new Audio("/coin.mp3") : undefined
+  );
+  const mario_bg_audio = useRef<HTMLAudioElement | undefined>(
+    typeof Audio !== "undefined" ? new Audio("/mario-bg-music.mp3") : undefined
+  );
 
   const coinAudio = () => {
-    audio.play();
+    audio.current?.play();
   };
-
+  const mario_bg_audioPlay = () => {
+    mario_bg_audio.current?.play();
+  };
   const marioRef = useRef(null);
   const cloudRef = useRef(null);
   const cloudTwoRef = useRef(null);
@@ -27,11 +33,7 @@ const HeroBanner = () => {
   const marioContainerRef = useRef<HTMLButtonElement>(null);
 
   const start = () => {
-    const text = gsap.timeline({
-      onComplete: () => {
-        setHide(false);
-      },
-    });
+    const text = gsap.timeline();
 
     text.to("#top", {
       left: "2%",
@@ -45,6 +47,7 @@ const HeroBanner = () => {
       transform: "translate(50%, -50%) scale(1)",
       duration: 1.5,
     });
+
     gsap.to(".double-bush", {
       transform: "translate(50%, -50%) scale(1)",
       duration: 1.5,
@@ -160,6 +163,7 @@ const HeroBanner = () => {
       pin.kill();
     };
   });
+
   return (
     <section
       className="bg-blue-400 rounded-3xl hero-banner px-10 py-16 relative "
@@ -218,7 +222,11 @@ const HeroBanner = () => {
             !disabled ? "cursor-pointer" : "cursor-not-allowed"
           }`}
           onClick={(e) => {
-            setHide(true);
+            gsap.to(".blink", {
+              display: "none",
+              duration: 0,
+            });
+
             coinAudio();
             gsap.fromTo(
               ".coin",
@@ -231,6 +239,7 @@ const HeroBanner = () => {
                 onComplete: () => {
                   document.getElementsByTagName("body")[0].style.overflow =
                     "auto";
+                  mario_bg_audioPlay();
                 },
               }
             );
@@ -244,11 +253,7 @@ const HeroBanner = () => {
         </button>
         <div className="brick bg-no-repeat bg-contain"></div>
         <div className="brick bg-no-repeat bg-contain"></div>
-        <h4
-          className={` text-white blink ${
-            hide ? "hidden" : "block"
-          } absolute top-[-150%] whitespace-nowrap text-center`}
-        >
+        <h4 className="text-white blink absolute top-[-150%] whitespace-nowrap text-center">
           Click here to allow scroll <br /> ⬇️
         </h4>
       </div>
