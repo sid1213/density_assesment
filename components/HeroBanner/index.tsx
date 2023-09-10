@@ -116,7 +116,6 @@ const HeroBanner = () => {
           end: `${marioContainer?.offsetHeight} top`,
           scrub: 1,
           pin: marioContainer,
-          markers: { startColor: "blue" },
           onLeave: () => {
             gsap.to(mario, {
               animationName: "play",
