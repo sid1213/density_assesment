@@ -78,11 +78,11 @@
 }
 .mario-main {
   position: absolute;
-  background-size: contain;
   bottom: 10%;
-  left: 50%;
+  left: 30%;
   width: 71px;
   height: 72px;
+  background-size: contain;
   background: url("/mario-main.png") left center;
   animation: 0.8s steps(4) infinite;
 }

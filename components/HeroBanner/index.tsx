@@ -15,20 +15,11 @@ const HeroBanner = () => {
   const cloudRef = useRef(null);
   const cloudTwoRef = useRef(null);
   const cloudThreeRef = useRef(null);
+  const marioContainerRef = useRef<HTMLButtonElement>(null);
 
   const start = () => {
-    const cloudOne = gsap.timeline(() => console.log("cloud-one"));
-    const cloudTwo = gsap.timeline(() => console.log("cloud-two"));
-    const cloudThree = gsap.timeline(() => {
-      console.log("cloud-three");
-    });
-    const bushSingle = gsap.timeline(() => console.log("single-bush "));
-    const bushDouble = gsap.timeline(() => console.log("double-bush "));
-    const bricks = gsap.timeline(() => console.log("bricks"));
-
     const text = gsap.timeline({
       onComplete: () => {
-        console.log("complete");
         document.getElementsByTagName("body")[0].style.overflow = "auto";
       },
     });
@@ -38,20 +29,18 @@ const HeroBanner = () => {
       duration: 1.5,
     });
 
-    cloudOne.to(".cloud-one", { right: "20%", duration: 1 });
-    cloudTwo.to(".cloud-two", { right: "40%", duration: 1.5 });
-    cloudThree.to(".cloud-three", { left: "10%", duration: 1 });
-    bushSingle.to(".single-bush", {
+    gsap.to(cloudRef.current, { right: "20%", duration: 1 });
+    gsap.to(cloudTwoRef.current, { right: "40%", duration: 1.5 });
+    gsap.to(cloudThreeRef.current, { left: "5%", duration: 1 });
+    gsap.to(".single-bush", {
       transform: "translate(50%, -50%) scale(1)",
       duration: 1.5,
     });
-
-    bushDouble.to(".double-bush", {
+    gsap.to(".double-bush", {
       transform: "translate(50%, -50%) scale(1)",
       duration: 1.5,
     });
-
-    bricks.to(".bricks", {
+    gsap.to(".bricks", {
       transform: "translate(50%, -50%) scale(1)",
       duration: 1.5,
     });
@@ -63,19 +52,21 @@ const HeroBanner = () => {
     const cloud = cloudRef.current;
     const cloudTwo = cloudTwoRef.current;
     const cloudThree = cloudThreeRef.current;
+    const marioContainer = marioContainerRef.current;
+
     gsap.fromTo(
       cloud,
       {
         duration: 3,
       },
       {
-        left: "50%",
+        left: "30%",
         scrollTrigger: {
           trigger: cloud,
           start: 0,
-          end: "bottom",
+          end: `${marioContainer?.offsetHeight} top`,
           toggleActions: "restart pause none reverse",
-          scrub: true,
+          scrub: 2,
         },
       }
     );
@@ -89,9 +80,9 @@ const HeroBanner = () => {
         scrollTrigger: {
           trigger: cloudTwo,
           start: 0,
-          end: "bottom",
+          end: `${marioContainer?.offsetHeight} top`,
           toggleActions: "restart pause none reverse",
-          scrub: true,
+          scrub: 2,
         },
       }
     );
@@ -105,56 +96,64 @@ const HeroBanner = () => {
         scrollTrigger: {
           trigger: cloudThree,
           start: 0,
-          end: "bottom",
+          end: `${marioContainer?.offsetHeight} top`,
+          scrub: 1,
+        },
+        toggleActions: "restart pause none reverse",
+      }
+    );
+
+    const pin = gsap.fromTo(
+      mario,
+      { left: "30%" },
+      {
+        left: `50%`,
+        ease: "none",
+        duration: 5,
+        scrollTrigger: {
+          trigger: marioContainer,
+          start: "top 120px",
+          end: `${marioContainer?.offsetHeight} top`,
+          scrub: 1,
+          pin: marioContainer,
+          markers: { startColor: "blue" },
+          onLeave: () => {
+            gsap.to(mario, {
+              animationName: "play",
+            });
+          },
+          onEnter: () => {
+            gsap.to(mario, {
+              animationName: "play",
+            });
+          },
+          onUpdate: (self) => {
+            // Check if scrolling in the backward direction
+            if (self.direction === -1) {
+              gsap.to(mario, {
+                transform: "rotateY(180deg)",
+              });
+            } else {
+              gsap.to(mario, {
+                transform: "rotateY(0deg)",
+              });
+            }
+          },
           toggleActions: "restart pause none reverse",
-          scrub: true,
         },
       }
     );
 
-    gsap.to(mario, {
-      left: "63%",
-      duration: 3,
-      scrollTrigger: {
-        trigger: mario,
-        start: 0,
-        toggleActions: "restart pause none reverse",
-        scrub: true,
-
-        onLeave: () => {
-          gsap.to(mario, {
-            animationName: "play",
-          });
-        },
-        onEnter: () => {
-          gsap.to(mario, {
-            animationName: "play",
-          });
-        },
-        onLeaveBack: () => {
-          gsap.to(mario, {
-            animationName: "none",
-          });
-        },
-        onUpdate: (self) => {
-          // Check if scrolling in the backward direction
-          if (self.direction === -1) {
-            gsap.to(mario, {
-              transform: "rotateY(180deg)",
-            });
-          } else {
-            gsap.to(mario, {
-              transform: "rotateY(0deg)",
-            });
-          }
-          console.log(self.animation);
-        },
-      },
-    });
+    return () => {
+      pin.kill();
+    };
   });
   return (
-    <section className="bg-blue-400 rounded-3xl hero-banner px-10 py-16 relative ">
-      <div className="w-1/2 " id="top">
+    <section
+      className="bg-blue-400 rounded-3xl hero-banner px-10 py-16 relative "
+      ref={marioContainerRef}
+    >
+      <div className="w-1/2 h-fit" id="top">
         <p className="text-white mario-text ">Ahead App</p>
         <h1 className="mt-5 text-white mario-text">
           Master your life <br />
