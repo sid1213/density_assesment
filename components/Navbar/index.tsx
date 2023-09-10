@@ -1,9 +1,14 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    if (window.innerWidth >= 1024) {
+      setIsOpen(true);
+    }
+  });
   return (
     <nav className="navbar">
       <div className="lg:container lg:mx-auto navbar-child">
