@@ -1,5 +1,5 @@
 "use client";
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import "components/HeroBanner/index.scss";
 import { uuid } from "uuidv4";
@@ -11,6 +11,15 @@ gsap.registerPlugin(CSSPlugin); //initialization
 gsap.registerPlugin(ScrollTrigger); //initialization
 
 const HeroBanner = () => {
+  const [disabled, setDisabled] = useState<boolean>(false);
+  const [hide, setHide] = useState<boolean>(true);
+
+  let audio = new Audio("/coin.mp3");
+
+  const coinAudio = () => {
+    audio.play();
+  };
+
   const marioRef = useRef(null);
   const cloudRef = useRef(null);
   const cloudTwoRef = useRef(null);
@@ -20,13 +29,13 @@ const HeroBanner = () => {
   const start = () => {
     const text = gsap.timeline({
       onComplete: () => {
-        document.getElementsByTagName("body")[0].style.overflow = "auto";
+        setHide(false);
       },
     });
 
     text.to("#top", {
       left: "2%",
-      duration: 1.5,
+      duration: 2,
     });
 
     gsap.to(cloudRef.current, { right: "20%", duration: 1 });
@@ -203,9 +212,45 @@ const HeroBanner = () => {
       <div className=" flex justify-center bricks ">
         <div className="brick bg-no-repeat bg-contain "></div>
         <div className="brick bg-no-repeat bg-contain"></div>
-        <div className="question-brick bg-no-repeat bg-contain cursor-pointer"></div>
+        <button
+          disabled={disabled}
+          className={`question-brick bg-no-repeat bg-contain ${
+            !disabled ? "cursor-pointer" : "cursor-not-allowed"
+          }`}
+          onClick={(e) => {
+            setHide(true);
+            coinAudio();
+            gsap.fromTo(
+              ".coin",
+              { top: "0" },
+              {
+                top: "-200%",
+                yoyo: true,
+                duration: 0.5,
+                repeat: 1,
+                onComplete: () => {
+                  document.getElementsByTagName("body")[0].style.overflow =
+                    "auto";
+                },
+              }
+            );
+            setDisabled(true);
+          }}
+        >
+          <div className="coin bg-no-repeat bg-contain top-0"></div>
+          {disabled && (
+            <div className="emptyBlock bg-no-repeat bg-contain top-0"></div>
+          )}
+        </button>
         <div className="brick bg-no-repeat bg-contain"></div>
         <div className="brick bg-no-repeat bg-contain"></div>
+        <h4
+          className={` text-white blink ${
+            hide ? "hidden" : "block"
+          } absolute top-[-150%] whitespace-nowrap text-center`}
+        >
+          Click here to allow scroll <br /> ⬇️
+        </h4>
       </div>
     </section>
   );
