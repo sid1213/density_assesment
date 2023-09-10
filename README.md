@@ -27,7 +27,7 @@ Install the dependencies and devDependencies and start the server.
 ````sh
 cd folder_name
 npm i
-npm run dev```
+npm run dev ```
 
 For production environments.
 use _Vercel_ . It is a cloud platform that empowers developers to deploy, scale, and manage their web applications effortlessly, offering a seamless experience for hosting and managing projects.
