@@ -24,10 +24,12 @@ And of course _Mario_ itself is open source with a [public repository](https://g
 Mario requires **[Node.js](https://nodejs.org/)** to run server.
 Install the dependencies and devDependencies and start the server.
 
-````sh
+```
+sh
 cd folder_name
 npm i
-npm run dev ```
+npm run dev
+```
 
 For production environments.
 use _Vercel_ . It is a cloud platform that empowers developers to deploy, scale, and manage their web applications effortlessly, offering a seamless experience for hosting and managing projects.
@@ -39,4 +41,7 @@ We chose the Mario theme for this project because of its timeless appeal and wid
 ### Data Generation
 
 Data for this project is generated using Chat GPT, a sophisticated language model that assists in creating content, dialogues, and other game-related elements, ensuring an engaging and immersive experience for players.
-````
+
+```
+
+```
