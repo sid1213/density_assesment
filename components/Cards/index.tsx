@@ -74,25 +74,38 @@ const data = [
 const Cards = () => {
   const cardSliderRef = useRef(null);
 
+  const cardSliderContainerRef = useRef(null);
+
   useLayoutEffect(() => {
     const cardSlider = cardSliderRef.current;
-    gsap.to(cardSlider, {
-      right: "40%",
-      duration: 3,
-      scrollTrigger: {
-        trigger: cardSlider,
-        start: "top 60%",
-        end: "bottom",
-        toggleActions: "restart pause none reverse",
-        scrub: true,
-      },
-    });
+    const cardSliderContainer = cardSliderContainerRef.current;
+
+    const pin = gsap.fromTo(
+      cardSlider,
+      { translateX: 0 },
+      {
+        translateX: `-${(data.length + 1) * 350 - window.innerWidth}`,
+        ease: "none",
+        duration: 1,
+        scrollTrigger: {
+          trigger: cardSliderContainer,
+          start: "top 50px",
+          end: `${data.length * 350} bottom`,
+          scrub: true,
+          pin: true,
+          toggleActions: "restart pause none reverse",
+        },
+      }
+    );
+    return () => {
+      pin.kill();
+    };
   }, []);
   // applied card animation with gsap here
 
   return (
     <section className="section">
-      <div>
+      <div ref={cardSliderContainerRef}>
         <div className="p-10 text-first flex items-center space-x-20">
           <h2 data-aos="fade-right">Does this Sounds Familiar.....</h2>
           <div data-aos="fade-left">
@@ -105,9 +118,9 @@ const Cards = () => {
             />
           </div>
         </div>
-        <div className="mt-5 overflow-auto cards">
+        <div className="mt-5 overflow-hidden cards">
           <div
-            className=" flex overflow-auto w-fit space-x-10 relative card-slider pt-8"
+            className=" flex w-fit space-x-10 relative card-slider pt-8"
             ref={cardSliderRef}
           >
             {data.map((data, index) => (

@@ -18,7 +18,7 @@ const Card: React.FC<PropType> = ({
 }) => {
   return (
     <div
-      className={`p-8 space-y-2  w-[350px]   rounded-2xl hanging `}
+      className={`p-8 space-y-2  w-[350px]  rounded-2xl hanging `}
       style={{
         backgroundColor: bg_clr,
         transform: hanging ? "rotate(-6deg)" : "rotate(0)",
