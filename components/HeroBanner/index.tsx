@@ -19,7 +19,9 @@ const HeroBanner = () => {
   const start = () => {
     const cloudOne = gsap.timeline(() => console.log("cloud-one"));
     const cloudTwo = gsap.timeline(() => console.log("cloud-two"));
-    const cloudThree = gsap.timeline(() => console.log("cloud-three"));
+    const cloudThree = gsap.timeline(() => {
+      console.log("cloud-three");
+    });
     const bushSingle = gsap.timeline(() => console.log("single-bush "));
     const bushDouble = gsap.timeline(() => console.log("double-bush "));
     const bricks = gsap.timeline(() => console.log("bricks"));
@@ -27,6 +29,7 @@ const HeroBanner = () => {
     const text = gsap.timeline({
       onComplete: () => {
         console.log("complete");
+        document.getElementsByTagName("body")[0].style.overflow = "auto";
       },
     });
 
