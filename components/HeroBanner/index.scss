@@ -84,6 +84,7 @@
   height: 72px;
   background-size: contain;
   background: url("/mario-main.png") left center;
+  transform: translate(0) scale(0);
   animation: 0.8s steps(4) infinite;
 }
 @keyframes play {

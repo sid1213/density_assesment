@@ -40,6 +40,10 @@ const HeroBanner = () => {
       transform: "translate(50%, -50%) scale(1)",
       duration: 1.5,
     });
+    gsap.to(".mario-main", {
+      transform: "translate(50%,0) scale(1)",
+      duration: 1.5,
+    });
     gsap.to(".bricks", {
       transform: "translate(50%, -50%) scale(1)",
       duration: 1.5,
@@ -199,7 +203,7 @@ const HeroBanner = () => {
       <div className=" flex justify-center bricks ">
         <div className="brick bg-no-repeat bg-contain "></div>
         <div className="brick bg-no-repeat bg-contain"></div>
-        <div className="question-brick bg-no-repeat bg-contain"></div>
+        <div className="question-brick bg-no-repeat bg-contain cursor-pointer"></div>
         <div className="brick bg-no-repeat bg-contain"></div>
         <div className="brick bg-no-repeat bg-contain"></div>
       </div>
