@@ -5,7 +5,12 @@ const Footer = () => {
     <footer className="footer 2xl:container mx-auto relative px-5 mt-10 border-t min-h-[40vh] flex justify-center">
       <div className="footer_content md:w-2/4 mx-auto flex justify-center items-center flex-col py-10">
         {/* logo */}
-        <Image width={65} height={65} alt={"footer logo"} src={"/logo.png"} />
+        <Image
+          width={65}
+          height={65}
+          alt={"footer logo"}
+          src={"/Logo-PNG.png"}
+        />
 
         {/* app name */}
         <h3 className="text-xl font-semibold mt-2 mb-4">Mario</h3>
